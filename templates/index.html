@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../static/style.css">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Loan Approval</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('Predict')}}"method="post">
+  <br>Married<br>	<input type="number" name="Married" placeholder="Yes 1 No 0" required="required" /><br>
+     Graduated <br>   <input type="number" name="Graduated" placeholder="Yes 1 No 0" required="required" /><br>
+ Loan Pending	<input type="number" name="LoanPending" placeholder="Yes 1 No 0" required="required" />
+
+       <br> <button type="submit" class="btn btn-primary btn-block btn-large" name="Predict">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction }}
+
+ </div>
+
+
+</body>
+</html>
